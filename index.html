@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/styled.css">    
+    <title>.:JobsNET:.</title>
+
+</head>
+
+<body>
+    <header>
+        <h1 id="titulotopo">JobsNET</h1><br>
+        <ul id="toplinks">
+            <li>
+                <a target="_blank" href="https://www.gama.academy/"> Quem Somos </a>
+            </li>
+            <li>
+                <a target="_blank" href ='mailto:teste@teste.com'> Email </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://github.com/ardlez/"> Contato </a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+    <form action="/db_conn.php" method="POST">
+        <div id="firstField">
+        <fieldset class="group">
+        <legend> Inscreva-se para a próxima seleção! </legend>
+            <div>
+                <label for="nomeCompleto"> Nome Completo: </label>
+                <input id="nomeCompleto" name="nomeCompleto" type="text" autocomplete="name" required/>            
+            </div>
+            <div>
+                <label for="email"> E-mail: </label>
+                <input id="email" name="email" type="email" inputmode="email" autocomplete="username" required/>            
+            </div>
+            <div>
+                <label for="telefone"> Telefone: </label>
+                <input id="telefone" name="telefone" type="tel" inputmode="numeric" min="11" autocomplete="tel" required/>            
+            </div>
+            <div>
+                <label for="cpf"> CPF: </label>
+                <input id="cpf" name="cpf" type="cpf" inputmode="numeric" max="11" autocomplete="number" required/>            
+            </div>
+            <div>
+                <label for="dataNasc"> Data de Nascimento: </label>
+                <input id="dataNasc" name="dataNasc" type="date" inputmode="numeric" autocomplete="bday" required/>            
+                <span id="othNasc" style="display: none;">Preencher Campo</span>
+            </div>
+            <div>
+                <label for="estadocivil"> Estado Civil: </label>
+                <select name="estadocivil" id="civil-select">
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="solteiro">Solteiro(a)</option>
+                    <option value="casado">Casado(a)</option>
+                    <option value="viuvo">Viúvo(a)</option>
+                </select>
+            </div>
+            <div>
+                <label for="genero">Gênero:</label>
+                <select name="genero" id="genero">
+                    <option value="">--Selecione uma opção--</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="NB">Não Binárie</option>
+                    <option value="Prefiro não informar">Prefiro não informar</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="profissao"> Profissão: </label>
+                <input id="profissao" name="profissao" type="text" required/>            
+            </div>
+            <div>
+                <label for="cargo"> Cargo Pretendido: </label>
+                <input id="cargo" name="cargo" type="text" required/>     
+            </div>
+        </fieldset>
+        </div> 
+
+        <div id="secField">
+        <fieldset class="group">
+        <legend> Informações de endereço: </legend>        
+            <div>
+               <label for="cep"> CEP: </label>
+              <input id="cep" name="cep" type="number" autocomplete="postal-code" required/>     
+            </div>
+            <div>
+                <label for="endereco"> Logradouro: </label>
+                <input id="endereco" name="endereco" type="text" autocomplete="street-address" required/>     
+            </div>
+            <div>
+                <label for="numeroEnd"> Número: </label>
+                <input id="numeroEnd" name="numeroEnd" type="number" autocomplete="address-line1" required/>     
+            </div>
+            <div>
+                <label for="bairro"> Bairro: </label>
+                <input id="bairro" name="bairro" type="text" autocomplete="address-line2" required/>     
+            </div>
+            <div>
+                <label for="cidade"> Cidade: </label>
+                <input id="cidade" name="cidade" type="text" autocomplete="address-level2" required/>     
+            </div>
+        </fieldset>
+        </div>
+
+        <div id="thirdField">
+            <fieldset class="group">
+            <legend> Outros documentos: </legend>
+                <div class="bloco">
+                    <div id="rg">
+                        <label> RG: </label>
+                        <input type="number" class="invalidInput" name="identidade" id="identidade" required>
+                    </div>
+                    <div>
+                        <label for="possuiveiculo">Possui Veículo?</label>
+                        <select name="possuiveiculo" id="possuiveiculo">
+                            <option value="selecione">--Selecione uma opção--</option>
+                            <option value="SIM">Sim</option>
+                            <option value="NÃO">Não</option>
+                            <option value="prefiroNao">Prefiro não informar</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="categoriaHabilitacao">Tipo de Habilitação:</label>
+                        <select name="categoriasHabilitacao" id="categoriasHabilitacao">
+                            <option value="selecione">--Selecione uma opção--</option>
+                            <option value="Não">Não há</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="outras">Outras</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset> 
+            
+            <br>
+
+            <div class="button">
+            <button type="submit" id="enviar" onclick="check_form()">ENVIAR</button>
+            </div>
+        </div> 
+    </form>
+    </main>
+<footer>
+    <p> Acesse meu <a href="https://www.linkedin.com/in/amnd-antunes/" id="linkedin"> Linkedin! </a>Projeto desenvolvido durante o Programa Start Tech.</p>
+</footer>
+</body>
+</html>
